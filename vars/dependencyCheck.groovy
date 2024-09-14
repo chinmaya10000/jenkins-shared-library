@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
 
-def call(){
-  dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
-  dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+def call(String additionalArguments, String odcInstallation) {
+    dependencyCheck additionalArguments: additionalArguments, odcInstallation: odcInstallation
 }
