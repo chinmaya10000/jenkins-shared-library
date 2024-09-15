@@ -1,6 +1,5 @@
-def call(String repoUrl, String branch = 'master') {
-    checkout([$class: 'GitSCM',
-        branches: [[name: branch]],
-        userRemoteConfigs: [[url: repoUrl]]
-    ])
+#!/usr/bin/env groovy
+
+def call(String GitUrl, String GitBranch){
+  git url: "${GitUrl}", branch: "${GitBranch}"
 }

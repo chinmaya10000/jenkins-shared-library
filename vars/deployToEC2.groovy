@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 def call(String ec2Instance, String imageVersion, String dockerCredsId, String ec2KeyId) {
     withCredentials([usernamePassword(credentialsId: dockerCredsId, passwordVariable: 'DOCKER_USER', usernameVariable: 'DOCKER_PWD')]) {
         sshagent([ec2KeyId]) {
