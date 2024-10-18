@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
-def call() {
+def qualityGateCheck() {
     timeout(time: 1, unit: "MINUTES") {
         waitForQualityGate abortPipeline: false
+    }
 }
